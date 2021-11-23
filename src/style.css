@@ -4,6 +4,13 @@ body {
     padding: 0;
 }
 
-a {
-    text-decoration: none;
+.wrapp {
+    width: 426px;
+    height: 600px;
+    margin: 10px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #efefef;
 }
