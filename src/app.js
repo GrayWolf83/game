@@ -64,11 +64,13 @@ export class App {
 
                     const check = Middleware.checkWinner([...this.#cells])
                     if (check) {
+                        Middleware.fillBlankCells([...this.#cells])
                         return this.#checkGameResult(check)
                     }
 
                     const checkDraw = Middleware.checkDraw([...this.#cells])
                     if (checkDraw) {
+                        Middleware.fillBlankCells([...this.#cells])
                         return this.#gameDraw()
                     }
 
