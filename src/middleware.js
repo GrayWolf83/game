@@ -44,3 +44,11 @@ export function checkWinner(cells) {
 export function checkDraw(cells) {
     return cells.every((cell) => cell.textContent !== '')
 }
+
+export function fillBlankCells(cells) {
+    cells.forEach((cell) => {
+        if (cell.textContent === '') {
+            cell.textContent = '*'
+        }
+    })
+}
