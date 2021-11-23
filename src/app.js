@@ -1,15 +1,18 @@
 import { Info } from './info'
 import { GameArea } from './gameArea'
+import { GameLogic } from './gameLogic'
 
 export class App {
     #wrapp
     #info
     #area
+    #gameLogic
 
     constructor() {
         this.#wrapp = document.createElement('div')
-        this.#info = new Info('Крестики - Нолики')
+        this.#info = new Info()
         this.#area = new GameArea()
+        this.#gameLogic = new GameLogic(this.#area.run(), this.#info)
     }
 
     #wrappConfigHandler() {
@@ -20,5 +23,6 @@ export class App {
     run() {
         this.#wrappConfigHandler()
         document.body.append(this.#wrapp)
+        this.#gameLogic.start()
     }
 }
