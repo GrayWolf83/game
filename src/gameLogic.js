@@ -1,20 +1,14 @@
 export class GameLogic {
     #stepUser1
     #gameCells
-    #gameArea
     #winnerVariants
     #info
 
-    constructor(gameArea, info) {
+    constructor(cells, info) {
         this.#stepUser1 = true
         this.#winnerVariants = ['123', '456', '789', '147', '258', '369', '159', '357']
-        this.#gameArea = gameArea
-        this.#gameCells = this.#getGameCells()
+        this.#gameCells = cells
         this.#info = info
-    }
-
-    #getGameCells() {
-        return this.#gameArea.querySelectorAll('.area-item')
     }
 
     #changeStep() {
@@ -64,9 +58,7 @@ export class GameLogic {
             this.#info.setCountValue2 = this.#info.getCountValueUser2 + 1
             this.#info.winnerUserText = 'Победил Игрок 2 (о)'
 
-            setTimeout(() => {
-                console.log('winn 2')
-            }, 10000)
+            setTimeout(() => {}, 10000)
         }
     }
 
